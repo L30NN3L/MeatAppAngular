@@ -1,15 +1,8 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var jsonServer = __importStar(require("json-server"));
-var fs = __importStar(require("fs"));
-var https = __importStar(require("https"));
+exports.__esModule = true;
+var jsonServer = require("json-server");
+var fs = require("fs");
+var https = require("https");
 var auth_1 = require("./auth");
 var authz_1 = require("./authz");
 var server = jsonServer.create();

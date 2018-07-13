@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var User = /** @class */ (function () {
     function User(email, name, password) {
         this.email = email;

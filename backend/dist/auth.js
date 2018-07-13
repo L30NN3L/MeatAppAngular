@@ -1,7 +1,14 @@
 "use strict";
-exports.__esModule = true;
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 var users_1 = require("./users");
-var jwt = require("jsonwebtoken");
+var jwt = __importStar(require("jsonwebtoken"));
 var api_config_1 = require("./api-config");
 exports.handleAuthentication = function (req, resp) {
     var user = req.body;

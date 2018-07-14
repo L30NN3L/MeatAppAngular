@@ -9,6 +9,6 @@ Para executar o projeto, usando o cmd no diretório e digitar:
   * npm install
   * node backend/dist/server.js
   * npm start
-  (recomendável usar 2 terminais)
+  * (recomendável usar 2 terminais)
 
   É isso!

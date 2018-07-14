@@ -11,4 +11,6 @@ Para executar o projeto, usando o cmd no diretório e digitar:
   * npm start
   * (recomendável usar 2 terminais)
 
+  -- OBS: Tirei package-lock.json por implicar erros de segurança
+
   É isso!

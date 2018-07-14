@@ -7,7 +7,7 @@ import { OrderService } from './order.service';
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
 import { Order, OrderItem } from './order.model';
 
-import 'rxjs/add/operator/do';
+import { tap } from 'rxjs/operators';
 
 import { Router } from '@angular/router';
 
@@ -52,6 +52,7 @@ export class OrderComponent implements OnInit {
     }, {validators: [OrderComponent.equalsTo], updateOn: 'blur'});
   }
 
+  // tslint:disable-next-line:member-ordering
   static equalsTo( group: AbstractControl): {[key: string]: boolean} {
     const email = group.get('email');
     const emailConfirmation = group.get('emailConfirmation');
@@ -94,10 +95,9 @@ export class OrderComponent implements OnInit {
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
 
       this.orderService.checkOrder(order)
-        .do((orderId: string) => {
+        .pipe(tap((orderId: string) => {
           this.orderId = orderId;
-        })
-
+        }))
         .subscribe( (orderId: string) => {
           this.router.navigate(['/order-summary']);
           console.log(` Compra concluída: ${orderId} `);
